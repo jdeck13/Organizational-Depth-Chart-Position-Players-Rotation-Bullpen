@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Organizational Depth Chart: Position Players, Rotation & Bullpen</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 10px 0 20px;
+    }
+
+    .top-wrapper {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .field-container {
+        position: relative;
+        max-width: 1100px;
+        margin: 0 auto;
+        aspect-ratio: 16 / 9;
+        background-image: url("field.jpg"); 
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 2px solid #ccc;
+    }
+
+    .position-box {
+        position: absolute;
+        width: 160px;
+        background: rgba(255,255,255,0.9);
+        border-radius: 6px;
+        padding: 4px;
+        font-size: 11px;
+        box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    }
+
+    .position-title {
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 2px;
+        font-size: 11px;
+    }
+
+    .player-row {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+        margin-bottom: 2px;
+    }
+
+    .player-row input[type="text"] {
+        flex: 1;
+        padding: 2px;
+        font-size: 10px;
+    }
+
+    .player-row select {
+        font-size: 10px;
+        padding: 1px;
+    }
+
+    .player-row label {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .player-row.italicized input[type="text"] {
+        font-style: italic;
+    }
+
+    .lineups-container {
+        max-width: 1100px;
+        margin: 20px auto 0;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .panel {
+        background: #fff;
+        border-radius: 8px;
+        padding: 8px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.1);
+        font-size: 12px;
+        flex: 1;
+        min-width: 320px;
+    }
+
+    .panel h2 {
+        font-size: 14px;
+        margin: 0 0 6px;
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 3px;
+        text-align: left;
+    }
+
+    th {
+        background: #f0f0f0;
+    }
+
+    .bottom-wrapper {
+        max-width: 1100px;
+        margin: 20px auto 0;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .save-btn {
+        margin: 20px auto;
+        display: block;
+        padding: 8px 16px;
+        background: #0078d4;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .save-btn:hover {
+        background: #005fa3;
+    }
+
+    .handed-select {
+        width: 45px;
+    }
+
+    .level-select {
+        width: 55px;
+    }
+
+    .role-select {
+        width: 50px;
+    }
+
+    .italic-checkbox {
+        transform: scale(0.8);
+    }
+</style>
+</head>
+<body>
+
+
+<h1>Organizational Depth Chart: Position Players, Rotation & Bullpen</h1>
+
+<div class="top-wrapper">
+    <!-- FIELD DEPTH CHART -->
+    <div class="field-container">
+        <!-- LF -->
+        <div class="position-box" style="top: 8%; left: 2%;">
+            <div class="position-title">LF</div>
+            <!-- LF-1..LF-5 -->
+            <!-- 1 -->
+            <div class="player-row" data-field-id="LF-1">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <!-- 2 -->
+            <div class="player-row" data-field-id="LF-2">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <!-- 3 -->
+            <div class="player-row" data-field-id="LF-3">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <!-- 4 -->
+            <div class="player-row" data-field-id="LF-4">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <!-- 5 -->
+            <div class="player-row" data-field-id="LF-5">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+        </div>
+
+        <!-- CF -->
+        <div class="position-box" style="top: 4%; left: 38%;">
+            <div class="position-title">CF</div>
+            <div class="player-row" data-field-id="CF-1">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="CF-2">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="CF-3">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="CF-4">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="CF-5">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+        </div>
+
+        <!-- RF -->
+        <div class="position-box" style="top: 8%; right: 12%;">
+            <div class="position-title">RF</div>
+            <div class="player-row" data-field-id="RF-1">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="RF-2">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="RF-3">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="RF-4">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="RF-5">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+        </div>
+
+        <!-- 3B -->
+        <div class="position-box" style="bottom: 25%; left: 2%;">
+            <div class="position-title">3B</div>
+            <div class="player-row" data-field-id="3B-1">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="3B-2">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="3B-3">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="3B-4">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="3B-5">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+        </div>
+
+        <!-- SS -->
+        <div class="position-box" style="top: 32%; left: 25%;">
+            <div class="position-title">SS</div>
+            <div class="player-row" data-field-id="SS-1">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="SS-2">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="SS-3">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="SS-4">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="SS-5">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+        </div>
+
+        <!-- 2B -->
+        <div class="position-box" style="top: 32%; right: 32%;">
+            <div class="position-title">2B</div>
+            <div class="player-row" data-field-id="2B-1">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="2B-2">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="2B-3">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="2B-4">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="2B-5">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+        </div>
+
+        <!-- 1B -->
+        <div class="position-box" style="bottom: 25%; right: 12%;">
+            <div class="position-title">1B</div>
+            <div class="player-row" data-field-id="1B-1">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="1B-2">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="1B-3">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+               <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="1B-4">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+             <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="1B-5">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+              <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+        </div>
+
+     	<!-- C -->
+ 	<div class="position-box" style="bottom: 12%; left: 38%;">
+            <div class="position-title">C</div>
+            <div class="player-row" data-field-id="C-1">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="C-2">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="C-3">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+               <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="C-4">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+             <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="C-5">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+              <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+        </div>
+        
+     	<!-- DH -->
+        <div class="position-box" style="bottom: 2%; left: 10%;">
+            <div class="position-title">DH</div>
+            <div class="player-row" data-field-id="DH-1">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+              <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="DH-2">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+                <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="DH-3">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+               <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="DH-4">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+		<select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+            <div class="player-row" data-field-id="DH-5">
+                <input type="text" placeholder="Player">
+                <select class="handed-select">
+                    <option value="">-</option>
+                    <option value="L">L</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                </select>
+              <select class="level-select">
+                    <option value="">-</option>
+                    <option>AAA</option>
+                    <option>AA</option>
+                    <option>A+</option>
+                    <option>A</option>
+                    <option>R</option>
+                    <option>CMPLX</option>
+                </select>
+                <label><input type="checkbox" class="italic-checkbox"> MiLB</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- LINEUPS VS RHP/LHP BELOW FIELD -->
+<div class="lineups-container">
+    <div class="panel">
+        <h2>Lineup vs RHP</h2>
+        <table>
+            <tr>
+                <th>#</th>
+		<th>Position</th>
+                <th>Player</th>
+                <th>Bats</th>
+              
+            </tr>
+            <tbody>
+            <!-- LVR-1..LVR-9 -->
+            <!-- 1 -->
+            <tr data-field-id="LVR-1">
+                <td>1</td>
+		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+            <!-- 2 -->
+            <tr data-field-id="LVR-2">
+                <td>2</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 3 -->
+            <tr data-field-id="LVR-3">
+                <td>3</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 4 -->
+            <tr data-field-id="LVR-4">
+                <td>4</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 5 -->
+            <tr data-field-id="LVR-5">
+                <td>5</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 6 -->
+            <tr data-field-id="LVR-6">
+                <td>6</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 7 -->
+            <tr data-field-id="LVR-7">
+                <td>7</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 8 -->
+            <tr data-field-id="LVR-8">
+                <td>8</td>
+               		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 9 -->
+            <tr data-field-id="LVR-9">
+                <td>9</td>
+               		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="panel">
+        <h2>Lineup vs LHP</h2>
+        <table>
+            <tr>
+                <th>#</th>
+		<th>Position</th>
+                <th>Player</th>
+                <th>Bats</th>
+            </tr>
+            <tbody>
+            <!-- LVL-1..LVL-9 -->
+            <tr data-field-id="LVL-1">
+                <td>1</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr data-field-id="LVL-2">
+                <td>2</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr data-field-id="LVL-3">
+                <td>3</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr data-field-id="LVL-4">
+                <td>4</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr data-field-id="LVL-5">
+                <td>5</td>
+               		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr data-field-id="LVL-6">
+                <td>6</td>
+               		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr data-field-id="LVL-7">
+                <td>7</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr data-field-id="LVL-8">
+                <td>8</td>
+                		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr data-field-id="LVL-9">
+                <td>9</td>
+               		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>C</option>
+                        <option>1B</option>
+                        <option>2B</option>
+                        <option>SS</option>
+                        <option>3B</option>
+                        <option>LF</option>
+                        <option>CF</option>
+                        <option>RF</option>
+                        <option>DH</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="L">L</option>
+                        <option value="R">R</option>
+                        <option value="S">S</option>
+                    </select>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- BOTTOM: ROTATION + BULLPEN -->
+<div class="bottom-wrapper">
+    <div class="panel" style="flex:1;">
+        <h2>Starting Pitching</h2>
+        <table>
+            <tr>
+                <th>#</th>
+		<th>Throws</th>
+                <th>Player</th>
+                <th>Level</th>
+                <th>MiLB</th>
+            </tr>
+            <tbody>
+            <!-- ROT-1..ROT-20 -->
+            <tr data-field-id="ROT-1">
+                <td>1</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+		<td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <tr data-field-id="ROT-2">
+                <td>2</td>
+                              <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+		<td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <tr data-field-id="ROT-3">
+                <td>3</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <tr data-field-id="ROT-4">
+                <td>4</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <tr data-field-id="ROT-5">
+                <td>5</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <tr data-field-id="ROT-6">
+                <td>6</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-7">
+                <td>7</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-8">
+                <td>8</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-9">
+                <td>9</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-10">
+                <td>10</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-11">
+                <td>11</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-12">
+                <td>12</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-13">
+                <td>13</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-14">
+                <td>14</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-15">
+                <td>15</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-16">
+                <td>16</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-17">
+                <td>17</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-18">
+                <td>18</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-19">
+                <td>19</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+ <tr data-field-id="ROT-20">
+                <td>20</td>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="panel" style="flex:1.2;">
+        <h2>Bullpen Arms</h2>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Role</th>
+                <th>Hand</th>
+                <th>Player</th>
+                <th>Level</th>
+                <th>MiLB</th>
+            </tr>
+            <tbody>
+            <!-- BP-1..BP-20 -->
+            <!-- 1 -->
+           <tr data-field-id="BP-1">
+                <td>1</td>
+               <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 2 -->
+            <tr data-field-id="BP-2">
+                <td>2</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 3 -->
+            <tr data-field-id="BP-3">
+                <td>3</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 4 -->
+            <tr data-field-id="BP-4">
+                <td>4</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 5 -->
+            <tr data-field-id="BP-5">
+                <td>5</td>
+  		<td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+
+            <!-- 6 -->
+            <tr data-field-id="BP-6">
+                <td>6</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 7 -->
+            <tr data-field-id="BP-7">
+                <td>7</td>
+                 <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 8 -->
+            <tr data-field-id="BP-8">
+                <td>8</td>
+                 <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 9 -->
+            <tr data-field-id="BP-9">
+                <td>9</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 10 -->
+            <tr data-field-id="BP-10">
+                <td>10</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 11 -->
+            <tr data-field-id="BP-11">
+                <td>11</td>
+                 <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 12 -->
+            <tr data-field-id="BP-12">
+                <td>12</td>
+                 <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 13 -->
+            <tr data-field-id="BP-13">
+                <td>13</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+            <!-- 14 -->
+            <tr data-field-id="BP-14">
+                <td>14</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+<!-- 15 -->
+            <tr data-field-id="BP-15">
+                <td>15</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+<!-- 16 -->
+            <tr data-field-id="BP-16">
+                <td>16</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+<!-- 17 -->
+            <tr data-field-id="BP-17">
+                <td>17</td>
+                 <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+<!-- 18 -->
+            <tr data-field-id="BP-18">
+                <td>18</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+<!-- 19 -->
+            <tr data-field-id="BP-19">
+                <td>19</td>
+                 <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+<!-- 20 -->
+            <tr data-field-id="BP-20">
+                <td>20</td>
+                  <td>
+                    <select class="role-select">
+                        <option value="">-</option>
+                        <option>CL</option>
+                        <option>ST</option>
+                        <option>SU</option>
+                        <option>MI</option>
+                        <option>LR</option>
+                    </select>
+                <td>
+                    <select class="handed-select">
+                        <option value="">-</option>
+                        <option value="LHP">LHP</option>
+                        <option value="RHP">RHP</option>
+                    </select>
+                </td>
+                <td><input type="text" placeholder="Player"></td>
+                </td>
+                <td>
+                    <select class="level-select">
+                        <option value="">-</option>
+                        <option>AAA</option>
+                        <option>AA</option>
+                        <option>A+</option>
+                        <option>A</option>
+                        <option>R</option>
+                        <option>CMPLX</option>
+                    </select>
+                </td>
+                <td><input type="checkbox" class="italic-checkbox"></td>
+            </tr>
+
+
+
+
+
+
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<button class="save-btn" onclick="saveChart()">Save Chart</button>
+<button id="exportPdfBtn" class="save-btn">Export as PDF</button>
+
+
+<script>
+function updateItalicClass(row) {
+    const checkbox = row.querySelector('input[type="checkbox"].italic-checkbox');
+    if (!checkbox) return;
+    if (checkbox.checked) {
+        row.classList.add('italicized');
+    } else {
+        row.classList.remove('italicized');
+    }
+}
+
+function saveChart() {
+    const rows = document.querySelectorAll('[data-field-id]');
+    const data = {};
+    rows.forEach(row => {
+        const id = row.getAttribute('data-field-id');
+        const textInput = row.querySelector('input[type="text"]');
+        const selects = row.querySelectorAll('select');
+        const checkbox = row.querySelector('input[type="checkbox"].italic-checkbox');
+
+        data[id] = {
+            name: textInput ? textInput.value : '',
+            selects: Array.from(selects).map(s => s.value),
+            italic: checkbox ? checkbox.checked : false
+        };
+    });
+    localStorage.setItem('depthChartAdvanced', JSON.stringify(data));
+    alert('Depth chart saved!');
+}
+
+function loadChart() {
+    const raw = localStorage.getItem('depthChartAdvanced');
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    const rows = document.querySelectorAll('[data-field-id]');
+    rows.forEach(row => {
+        const id = row.getAttribute('data-field-id');
+        if (!data[id]) return;
+        const textInput = row.querySelector('input[type="text"]');
+        const selects = row.querySelectorAll('select');
+        const checkbox = row.querySelector('input[type="checkbox"].italic-checkbox');
+
+        if (textInput) textInput.value = data[id].name || '';
+        if (selects.length && data[id].selects) {
+            selects.forEach((s, i) => {
+                s.value = data[id].selects[i] || '';
+            });
+        }
+        if (checkbox) checkbox.checked = !!data[id].italic;
+        updateItalicClass(row);
+    });
+}
+
+window.addEventListener('load', () => {
+    loadChart();
+    document.querySelectorAll('.italic-checkbox').forEach(cb => {
+        cb.addEventListener('change', () => {
+            const row = cb.closest('[data-field-id]');
+            if (row) updateItalicClass(row);
+        });
+    });
+});
+
+// Export to PDF
+document.getElementById("exportPdfBtn").addEventListener("click", async function () {
+    const { jsPDF } = window.jspdf;
+
+    html2canvas(document.body).then(canvas => {
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jsPDF("p", "mm", "a4");
+
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const imgWidth = pageWidth;
+        const imgHeight = canvas.height * (imgWidth / canvas.width);
+
+        pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+        pdf.save("depth_chart.pdf");
+    });
+});
+</script>
+</script>
+
+</body>
+</html>
